@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!-- ==========================================================
+     GRAPHIC DESIGNER PORTFOLIO — MAIN HTML
+     ----------------------------------------------------------
+     • To change your designer name or tagline, search for "REPLACE"
+       comments below and update the text.
+     • All project cards and modal contents are rendered automatically
+       from js/projects.js — you don't need to write card HTML!
+     ========================================================== -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- REPLACE: Page title -->
+  <title>Uzair Chaudhary — Graphic Designer</title>
+  
+  <!-- REPLACE: Meta description -->
+  <meta name="description" content="Portfolio of Uzair Chaudhary — Graphic designer specializing in brand identity, editorial layout, packaging, and poster design.">
+  <meta name="theme-color" content="#0b0c0f">
+
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Ambient background glow blobs (purely decorative, dark & desaturated) -->
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <!-- REPLACE: Your name / Studio name -->
+      <h1 class="logo">Uzair Chaudhary</h1>
+      <!-- REPLACE: Your one-line tagline or specialty -->
+      <p class="tagline">Graphic Designer — Selected Work</p>
+    </div>
+  </header>
+
+  <!-- Main Content: Project Grid -->
+  <main class="site-main">
+    <section id="projects" class="grid" aria-label="Selected Projects">
+      <!-- Project cards are injected dynamically by js/main.js from js/projects.js -->
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p>© <span id="year"></span>  Uzair Chaudhary. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Project Gallery Modal -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <!-- Modal Backdrop -->
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+
+    <!-- Modal Panel -->
+    <div class="modal-panel glass" role="document">
+      <!-- Modal Close Button -->
+      <button id="modal-close" class="modal-close glass" type="button" aria-label="Close project modal">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="modal-content-grid">
+        <!-- Left Column: Artwork Showcase Viewer -->
+        <div class="gallery-col">
+          <div class="gallery-stage-wrapper">
+            <!-- Loading Skeleton Shimmer -->
+            <div id="gallery-skeleton" class="gallery-skeleton" aria-hidden="true"></div>
+
+            <!-- Main Image Viewer -->
+            <div class="gallery-viewer" id="gallery-viewer">
+              <img id="modal-main-img" class="gallery-main-img" src="" alt="" decoding="async">
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Project Details -->
+        <div class="details-col">
+          <div class="details-header">
+            <div class="project-meta-top">
+              <span id="modal-category" class="project-category"></span>
+              <span class="meta-dot" aria-hidden="true">•</span>
+              <span id="modal-year" class="project-year"></span>
+            </div>
+            <h2 id="modal-title" class="project-title"></h2>
+          </div>
+
+          <div class="details-body">
+            <p id="modal-desc" class="project-desc"></p>
+
+            <dl class="project-specs">
+              <div class="spec-row">
+                <dt class="spec-label">Client</dt>
+                <dd id="modal-client" class="spec-value"></dd>
+              </div>
+              <div class="spec-row">
+                <dt class="spec-label">Role</dt>
+                <dd id="modal-role" class="spec-value"></dd>
+              </div>
+              <div class="spec-row">
+                <dt class="spec-label">Tools</dt>
+                <dd id="modal-tools" class="spec-value"></dd>
+              </div>
+            </dl>
+
+            <!-- Dynamic Image Caption -->
+            <div class="caption-card glass" id="caption-card">
+              <span class="caption-title">Artwork Details</span>
+              <p id="modal-caption" class="caption-text"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/projects.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
